@@ -97,6 +97,7 @@ body::before {
     radial-gradient(circle at 82% 78%, #fff 0 1px, transparent 2px);
 }
 
+/* TOP MESSAGE */
 .top-message {
   width: fit-content;
   max-width: 100%;
@@ -120,6 +121,7 @@ body::before {
   font-size: 1.2em;
 }
 
+/* HERO */
 .hero {
   text-align: center;
   position: relative;
@@ -151,6 +153,7 @@ body::before {
   vertical-align: middle;
 }
 
+/* SCENE */
 .scene {
   min-height: 660px;
   margin-top: 5px;
@@ -162,6 +165,7 @@ body::before {
   z-index: 1;
 }
 
+/* SIDE MESSAGE */
 .side-message {
   align-self: center;
   justify-self: center;
@@ -188,6 +192,7 @@ body::before {
   margin-top: 5px;
 }
 
+/* CAKE AREA */
 .cake-area {
   height: 580px;
   display: flex;
@@ -203,6 +208,8 @@ body::before {
   filter: drop-shadow(0 25px 30px rgba(0,0,0,.4));
 }
 
+/* NUMBER CANDLES
+   FIX: جعل اتجاه الرقمين LTR حتى يظهر 19 بدل 91 */
 .number-candles {
   position: absolute;
   z-index: 20;
@@ -210,18 +217,25 @@ body::before {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
+  flex-direction: row;
+  direction: ltr;
   gap: 7px;
+  justify-content: center;
+  align-items: center;
 }
 
 .digit-candle {
   position: relative;
+  direction: ltr;
   font-family: Georgia, serif;
   font-size: 105px;
   font-weight: 900;
   line-height: 1;
   color: #ff70ad;
   -webkit-text-stroke: 3px #fff0f7;
-  text-shadow: 0 0 10px #fff, 0 0 30px #ff3e99;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 30px #ff3e99;
 }
 
 .flame {
@@ -232,27 +246,31 @@ body::before {
   left: 50%;
   transform: translateX(-50%);
   background:
-    radial-gradient(circle at 50% 75%,
+    radial-gradient(
+      circle at 50% 75%,
       #fff 0 18%,
       #ffe36c 22% 48%,
-      #ff7c32 60% 100%);
+      #ff7c32 60% 100%
+    );
   border-radius: 50% 50% 50% 10%;
   rotate: 2deg;
   filter: drop-shadow(0 0 12px #ffb73f);
   animation: flicker .65s infinite alternate;
-  transition: opacity .25s ease, transform .25s ease;
+  transition:
+    opacity .25s ease,
+    transform .25s ease;
 }
 
 @keyframes flicker {
   from {
     transform: translateX(-50%) scale(.9) rotate(-3deg);
   }
-
   to {
     transform: translateX(-50%) scale(1.08) rotate(4deg);
   }
 }
 
+/* CAKE TIERS */
 .tier {
   position: absolute;
   left: 50%;
@@ -287,7 +305,13 @@ body::before {
   height: 105px;
   top: 105px;
   border-radius: 28px 28px 45% 45%;
-  background: linear-gradient(150deg, #fff0f6, #ffb8d3 52%, #ed6ba7);
+  background:
+    linear-gradient(
+      150deg,
+      #fff0f6,
+      #ffb8d3 52%,
+      #ed6ba7
+    );
 }
 
 .tier-middle {
@@ -295,7 +319,13 @@ body::before {
   height: 125px;
   top: 185px;
   border-radius: 25px 25px 45% 45%;
-  background: linear-gradient(150deg, #ffe9f3, #f99ac2 55%, #d95494);
+  background:
+    linear-gradient(
+      150deg,
+      #ffe9f3,
+      #f99ac2 55%,
+      #d95494
+    );
 }
 
 .tier-bottom {
@@ -303,9 +333,16 @@ body::before {
   height: 145px;
   top: 285px;
   border-radius: 25px 25px 48% 48%;
-  background: linear-gradient(150deg, #a89aff, #7365cf 45%, #4e408f);
+  background:
+    linear-gradient(
+      150deg,
+      #a89aff,
+      #7365cf 45%,
+      #4e408f
+    );
 }
 
+/* ICING */
 .icing {
   position: absolute;
   left: -2%;
@@ -313,8 +350,13 @@ body::before {
   width: 104%;
   height: 38px;
   border-radius: 50%;
-  background: linear-gradient(#fff8fc, #ffd3e6);
-  box-shadow: 0 5px 10px rgba(117, 22, 84, .2);
+  background:
+    linear-gradient(
+      #fff8fc,
+      #ffd3e6
+    );
+  box-shadow:
+    0 5px 10px rgba(117, 22, 84, .2);
 }
 
 .icing::after {
@@ -324,14 +366,16 @@ body::before {
   right: 6%;
   bottom: -22px;
   height: 35px;
-  background: radial-gradient(
-    ellipse at center,
-    #fff2f8 0 35%,
-    transparent 37%
-  );
+  background:
+    radial-gradient(
+      ellipse at center,
+      #fff2f8 0 35%,
+      transparent 37%
+    );
   background-size: 42px 28px;
 }
 
+/* TIER NAME */
 .tier-name {
   position: absolute;
   z-index: 3;
@@ -343,6 +387,7 @@ body::before {
   text-shadow: 0 1px 0 #fff;
 }
 
+/* PEARLS */
 .pearls {
   position: absolute;
   bottom: 12px;
@@ -355,15 +400,18 @@ body::before {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle at 30% 25%,
-    white,
-    #ffd0e3 45%,
-    #c64e91
-  );
-  box-shadow: 0 2px 4px rgba(0,0,0,.3);
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      white,
+      #ffd0e3 45%,
+      #c64e91
+    );
+  box-shadow:
+    0 2px 4px rgba(0,0,0,.3);
 }
 
+/* SPRINKLES */
 .sprinkles {
   position: absolute;
   inset: 48px 12% auto;
@@ -382,6 +430,7 @@ body::before {
     -25px 17px 0 #ff9c3b;
 }
 
+/* FLOWERS */
 .tiny-flower {
   position: absolute;
   font-size: 30px;
@@ -398,6 +447,7 @@ body::before {
   bottom: 8px;
 }
 
+/* RIBBON */
 .ribbon {
   position: absolute;
   left: 7%;
@@ -405,10 +455,16 @@ body::before {
   top: 70px;
   height: 22px;
   border-radius: 50%;
-  background: linear-gradient(#ffb5d7, #c94a86);
-  box-shadow: 0 2px 7px rgba(0,0,0,.35);
+  background:
+    linear-gradient(
+      #ffb5d7,
+      #c94a86
+    );
+  box-shadow:
+    0 2px 7px rgba(0,0,0,.35);
 }
 
+/* BOW */
 .bow {
   position: absolute;
   z-index: 6;
@@ -427,8 +483,14 @@ body::before {
   width: 55px;
   height: 47px;
   border: 4px solid #f6a0c5;
-  background: linear-gradient(145deg, #ffb1d3, #8e1c5c);
-  box-shadow: inset 0 5px 9px rgba(255,255,255,.3);
+  background:
+    linear-gradient(
+      145deg,
+      #ffb1d3,
+      #8e1c5c
+    );
+  box-shadow:
+    inset 0 5px 9px rgba(255,255,255,.3);
 }
 
 .bow::before {
@@ -452,14 +514,23 @@ body::before {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: linear-gradient(145deg, #ffb7d7, #9d245f);
+  background:
+    linear-gradient(
+      145deg,
+      #ffb7d7,
+      #9d245f
+    );
 }
 
+/* ROSES */
 .rose {
   position: absolute;
   z-index: 7;
   font-size: 37px;
-  filter: drop-shadow(0 4px 5px rgba(0,0,0,.4));
+  filter:
+    drop-shadow(
+      0 4px 5px rgba(0,0,0,.4)
+    );
 }
 
 .rose-1 {
@@ -478,6 +549,7 @@ body::before {
   font-size: 30px;
 }
 
+/* CAKE PLATE */
 .cake-plate {
   position: absolute;
   z-index: 1;
@@ -487,10 +559,17 @@ body::before {
   width: 108%;
   height: 28px;
   border-radius: 50%;
-  background: linear-gradient(#ffeab2, #c28a25 55%, #fff0bb);
-  box-shadow: 0 0 20px rgba(255, 206, 87, .45);
+  background:
+    linear-gradient(
+      #ffeab2,
+      #c28a25 55%,
+      #fff0bb
+    );
+  box-shadow:
+    0 0 20px rgba(255, 206, 87, .45);
 }
 
+/* ROMANCE SIDE */
 .romance-side {
   position: relative;
   min-height: 450px;
@@ -511,18 +590,40 @@ body::before {
   font-size: 72px;
 }
 
-.rose-big:nth-child(1) { left: 12px; top: 20px; }
-.rose-big:nth-child(2) { left: 60px; top: 0; }
-.rose-big:nth-child(3) { left: 105px; top: 35px; }
-.rose-big:nth-child(4) { left: 30px; top: 65px; }
-.rose-big:nth-child(5) { left: 82px; top: 70px; }
+.rose-big:nth-child(1) {
+  left: 12px;
+  top: 20px;
+}
+
+.rose-big:nth-child(2) {
+  left: 60px;
+  top: 0;
+}
+
+.rose-big:nth-child(3) {
+  left: 105px;
+  top: 35px;
+}
+
+.rose-big:nth-child(4) {
+  left: 30px;
+  top: 65px;
+}
+
+.rose-big:nth-child(5) {
+  left: 82px;
+  top: 70px;
+}
 
 .bouquet-ribbon {
   position: absolute;
   top: 135px;
   left: 58px;
   font-size: 65px;
-  filter: drop-shadow(0 8px 5px rgba(0,0,0,.4));
+  filter:
+    drop-shadow(
+      0 8px 5px rgba(0,0,0,.4)
+    );
 }
 
 .gift {
@@ -541,9 +642,11 @@ body::before {
   background: #ffd3e2;
   color: #6f174d;
   font-size: 18px;
-  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.35);
 }
 
+/* MESSAGE CARD */
 .message-card {
   width: min(700px, 95%);
   margin: 0 auto 22px;
@@ -577,6 +680,7 @@ body::before {
   font-weight: 700;
 }
 
+/* MUSIC */
 .music-box {
   width: min(700px, 95%);
   margin: 0 auto 18px;
@@ -585,15 +689,17 @@ body::before {
   z-index: 2;
   border: 1px solid rgba(115, 151, 255, .5);
   border-radius: 25px;
-  background: linear-gradient(
-    90deg,
-    rgba(31, 74, 200, .32),
-    rgba(177, 46, 145, .3)
-  );
+  background:
+    linear-gradient(
+      90deg,
+      rgba(31, 74, 200, .32),
+      rgba(177, 46, 145, .3)
+    );
   display: flex;
   align-items: center;
   gap: 14px;
-  box-shadow: 0 0 35px rgba(57, 92, 255, .18);
+  box-shadow:
+    0 0 35px rgba(57, 92, 255, .18);
 }
 
 .music-icon {
@@ -627,6 +733,7 @@ body::before {
   height: 38px;
 }
 
+/* BUTTONS */
 .controls {
   position: relative;
   z-index: 2;
@@ -645,44 +752,61 @@ body::before {
 }
 
 .button:hover {
-  transform: translateY(-3px) scale(1.02);
+  transform:
+    translateY(-3px)
+    scale(1.02);
 }
 
 .button:active {
-  transform: translateY(0) scale(.98);
+  transform:
+    translateY(0)
+    scale(.98);
 }
 
 .blow-button {
-  background: linear-gradient(90deg, #ff5ca5, #ff2f82);
-  box-shadow: 0 0 25px rgba(255, 48, 132, .4);
+  background:
+    linear-gradient(
+      90deg,
+      #ff5ca5,
+      #ff2f82
+    );
+  box-shadow:
+    0 0 25px rgba(255, 48, 132, .4);
 }
 
 .reset-button {
-  background: linear-gradient(90deg, #ffc83d, #ff9d38);
+  background:
+    linear-gradient(
+      90deg,
+      #ffc83d,
+      #ff9d38
+    );
   color: #3f1930;
-  box-shadow: 0 0 25px rgba(255, 191, 60, .3);
+  box-shadow:
+    0 0 25px rgba(255, 191, 60, .3);
 }
 
-/*
-  الإصلاح الأساسي:
-  checkbox أصبح في بداية .birthday-page،
-  لذلك نستطيع التحكم في العناصر الموجودة بعده
-  باستخدام ~ بدون :has() وبدون JavaScript.
-*/
+/* CANDLE CONTROL */
 #blow:checked ~ .scene .flame {
   opacity: 0;
-  transform: translateX(-50%) scale(0);
+  transform:
+    translateX(-50%)
+    scale(0);
   animation: none;
 }
 
 #blow:checked ~ .scene .number-candles {
-  filter: drop-shadow(0 0 8px rgba(255, 100, 180, .5));
+  filter:
+    drop-shadow(
+      0 0 8px rgba(255, 100, 180, .5)
+    );
 }
 
 #blow:not(:checked) ~ .controls .reset-button {
   opacity: .65;
 }
 
+/* FOOTER */
 footer {
   position: relative;
   z-index: 2;
@@ -692,6 +816,7 @@ footer {
   font-size: 13px;
 }
 
+/* DECORATION */
 .birthday-page::after {
   content: "♥   ✦   ♥   ✧   ♥   ✦   ♥";
   position: fixed;
@@ -706,6 +831,7 @@ footer {
   pointer-events: none;
 }
 
+/* TABLET */
 @media (max-width: 1000px) {
   .scene {
     grid-template-columns: 1fr;
@@ -728,10 +854,13 @@ footer {
   }
 
   .rose-bouquet {
-    transform: scale(.8) rotate(8deg);
+    transform:
+      scale(.8)
+      rotate(8deg);
   }
 }
 
+/* MOBILE */
 @media (max-width: 650px) {
   .birthday-page {
     padding: 14px 12px 25px;
@@ -752,12 +881,17 @@ footer {
     transform-origin: bottom center;
   }
 
+  /* إصلاح ترتيب 19 على الهاتف أيضًا */
   .number-candles {
     top: 18px;
+    direction: ltr;
+    flex-direction: row;
+    gap: 5px;
   }
 
   .digit-candle {
     font-size: 78px;
+    direction: ltr;
   }
 
   .tier-top {
@@ -781,7 +915,9 @@ footer {
   }
 
   .rose-bouquet {
-    transform: scale(.65) rotate(8deg);
+    transform:
+      scale(.65)
+      rotate(8deg);
   }
 
   .gift {
